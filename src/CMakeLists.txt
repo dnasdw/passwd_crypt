@@ -1,0 +1,6 @@
+AUTO_FILES("." "src" "\\.(c|h)$")
+include_directories(${DEP_INCLUDE_DIR})
+link_directories(${DEP_LIBRARY_DIR})
+ADD_EXE(passwd_crypt "${src}")
+target_link_libraries(passwd_crypt crypt)
+install(TARGETS passwd_crypt DESTINATION bin)
